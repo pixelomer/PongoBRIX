@@ -22,7 +22,7 @@ Currently supported devices:
 - iPhone 7 GSM (iPhone9,3)
 - iPad Pro 10.5-inch (iPad7,4)
 
-If your device is already supported, great! You won't have to do modify the code. You can skip to [running BRIX](#running-brix). If your device isn't supported, adding support for your own device shouldn't be hard.
+If your device is already supported, great! You won't have to modify the code. You can skip to [running BRIX](#running-brix). If your device isn't supported, adding support for your own device shouldn't be hard.
 
 ## Adding support for your device
 
@@ -60,5 +60,5 @@ Address: 0x20f1000a0
 
 - **Movement:** vol+, vol-
 - **Reset:** Press the power button while not paused.
-- **Pause:** If your device has a mute switch, mute to pause. Otherwise, you can use the home button to pause. The game will be paused as long as you hold the home button.
+- **Pause:** If your device has a mute switch, mute to pause. Otherwise, you can use the home button to pause. The game will remain paused for as long as you hold the home button.
 - **Exit:** Press the power button while paused.
