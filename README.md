@@ -30,7 +30,7 @@ Different devices use different addresses for buttons and there doesn't appear t
 
 1. With your device plugged in, run `make load_buttons`. This will install the button helper module in pongoOS and show you the pongoOS shell.
 2. In the pongoOS shell, run `button_helper`.
-3. Follow the instructions given by the program. Example output:
+3. Follow the instructions given by the program. "Holding the mute switch" means muting and releasing it means unmuting. Example output:
 ```
 pongoOS> button_helper
 
