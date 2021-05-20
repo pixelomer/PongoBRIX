@@ -1,0 +1,6 @@
+brix.bin.arm64.ld
+brix.bin
+button_helper.bin.arm64.ld
+button_helper.bin
+device_tree.log
+**/.DS_Store

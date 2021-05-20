@@ -1,0 +1,19 @@
+--- a/src/dynamic/modload.c
++++ b/src/dynamic/modload.c
+@@ -28,6 +28,7 @@
+ #include <mach-o/nlist.h>
+ #include <mach-o/reloc.h>
+ #include <lzma/lzmadec.h>
++#include <stdlib.h>
+ #include <pongo.h>
+ #include <aes/aes.h>
+ 
+@@ -47,6 +48,8 @@ void *__memcpy_chk (void *dest, const void * src, size_t n, size_t dest_len) {
+ }
+ 
+ struct pongo_exports public_api[] = {
++    EXPORT_SYMBOL(rand),
++    EXPORT_SYMBOL(srand),
+     EXPORT_SYMBOL(xnu_pf_apply_each_kext),
+     EXPORT_SYMBOL(xnu_pf_get_first_kext),
+     EXPORT_SYMBOL(xnu_pf_get_kext_header),
