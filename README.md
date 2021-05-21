@@ -11,7 +11,7 @@ A pongoOS module for running the BRIX game, featuring rendering code I wrote at 
 **Warning:** This project was intended to be compiled on macOS. If you're using Linux, you will have to modify the makefile and you might need to use something other than `pongoterm`.
 
 1. Make sure you cloned pongoOS to `../pongoOS`.
-2. Apply the small patch in `pongo_changes.diff` to `../pongoOS`. This patch makes pongoOS export two additional symbols that are required by the CHIP-8 emulator.
+2. Apply the small patch in `pongo_changes.patch` to `../pongoOS`. This patch makes pongoOS export two additional symbols that are required by the CHIP-8 emulator. You can apply this patch by running `git apply pongo_changes.patch` in `../pongoOS` (replace `pongo_changes.patch` with the absolute path).
 3. Compile pongoOS itself by running `make` in `../pongoOS`.
 4. Compile `pongoterm` by running `make` in `../pongoOS/scripts`.
 5. Boot into pongoOS with `checkrain -k ../pongoOS/build/Pongo.bin -p` if your device isn't already in pongoOS.

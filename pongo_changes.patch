@@ -1,3 +1,5 @@
+diff --git a/src/dynamic/modload.c b/src/dynamic/modload.c
+index 24b5e89..6db7abf 100644
 --- a/src/dynamic/modload.c
 +++ b/src/dynamic/modload.c
 @@ -28,6 +28,7 @@
