@@ -6,7 +6,7 @@ A pongoOS module for running the BRIX game, featuring rendering code I wrote at 
 
 # Usage
 
-## Before your begin
+## Before you begin
 
 **Warning:** This project was intended to be compiled on macOS. If you're using Linux, you will have to modify the makefile and you might need to use something other than `pongoterm`.
 
