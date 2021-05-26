@@ -20,11 +20,14 @@ A pongoOS module for running the BRIX game, featuring rendering code I wrote at 
 
 Currently supported devices:
 - iPhone 7 GSM (iPhone9,3)
-- iPad Pro 10.5-inch (iPad7,4)
+- iPad Pro 10.5-inch WiFi/Cellular (iPad7,4)
+- iPad 10.2-inch 7th Gen WiFi/Cellular (iPad7,12)
 
 If your device is already supported, great! You won't have to modify the code. You can skip to [running BRIX](#running-brix). If your device isn't supported, adding support for your own device shouldn't be hard.
 
 ## Adding support for your device
+
+**The `button_helper` tool was only tested successfully on A10(X). It may not work on other processors.**
 
 Different devices use different addresses for buttons and there doesn't appear to be an automatic way to extract these addresses from the device. However, you can use `button_helper` in this repository to manually find the button addresses for your device.
 
