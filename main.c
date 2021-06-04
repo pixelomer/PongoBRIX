@@ -17,6 +17,15 @@ struct device_model {
 
 const struct device_model devices[] = {
 	{
+		.name = "iPhone10,6",
+		.volume_up = 0x233100098,
+		.volume_down = 0x2331000ec,
+		.mute_switch = NULL,
+		.power_button = 0x2331000e8,
+		.home_button = NULL,
+		.home_button_at_right = 0
+	},
+	{
 		.name = "iPhone6,2",
 		.volume_up = 0x20e300010,
 		.volume_down = 0x20e300014,
