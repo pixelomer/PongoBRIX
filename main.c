@@ -17,6 +17,42 @@ struct device_model {
 
 const struct device_model devices[] = {
 	{
+		.name = "iPhone6,2",
+		.volume_up = 0x20e300010,
+		.volume_down = 0x20e300014,
+		.mute_switch = 0x20e300040,
+		.power_button = 0x20e30000c,
+		.home_button = 0x20e300008,
+		.home_button_at_right = 1
+	},
+	{
+		.name = "iPhone7,2",
+		.volume_up = 0x20e3000b4,
+		.volume_down = 0x20e3000b8,
+		.mute_switch = 0x20e30020c,
+		.power_button = 0x20e300084,
+		.home_button = 0x20e300080,
+		.home_button_at_right = 1
+	},
+	{
+		.name = "iPhone8,1",
+		.volume_up = 0x20f100108,
+		.volume_down = 0x20f10010c,
+		.mute_switch = 0x20f100254,
+		.power_button = 0x20f100184,
+		.home_button = 0x20f100180,
+		.home_button_at_right = 1
+	},
+	{
+		.name = "iPhone9,1",
+		.volume_up = 0x20f10005c,
+		.volume_down = 0x20f1002d0,
+		.mute_switch = 0x20f100158,
+		.power_button = 0x20f1002cc,
+		.home_button = NULL,
+		.home_button_at_right = 0
+	},
+	{
 		.name = "iPhone9,3",
 		.volume_up = 0x20f10005c,
 		.volume_down = 0x20f1002d0,
@@ -41,6 +77,15 @@ const struct device_model devices[] = {
 		.mute_switch = NULL,
 		.power_button = 0x20f1002cc,
 		.home_button = 0x20f1002d0,
+		.home_button_at_right = 1
+	},
+	{
+		.name = "iPod9,1",
+		.volume_up = 0x20f10005c,
+		.volume_down = 0x20f1002d0,
+		.mute_switch = NULL,
+		.power_button = 0x20f1002cc,
+		.home_button = 0x20f100158,
 		.home_button_at_right = 1
 	},
 	{ .name = NULL }
