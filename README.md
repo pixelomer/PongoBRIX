@@ -27,8 +27,6 @@ If your device is already supported, great! You won't have to modify the code. Y
 
 ## Adding support for your device
 
-**The `button_helper` tool was only tested successfully on A10(X). It may not work on other processors.**
-
 Different devices use different addresses for buttons and there doesn't appear to be an automatic way to extract these addresses from the device. However, you can use `button_helper` in this repository to manually find the button addresses for your device.
 
 1. With your device plugged in, run `make load_buttons`. This will install the button helper module in pongoOS and show you the pongoOS shell.
