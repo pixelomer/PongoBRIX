@@ -13,7 +13,7 @@
 #define TOO_MANY_MATCHES (uint32_t *)0x1
 #define SKIPPED (uint32_t *)0x2
 
-const volatile uint32_t * const gpio_base = 0x20f100000;
+volatile uint32_t *gpio_base;
 
 // fflush(stdout) wasn't working so this function forces a flush
 void flush_spin(uint32_t usec) {
@@ -48,6 +48,10 @@ void find_buttons() {
 		device_model = "(unknown)";
 	}
 	printf("\nDevice: %s\n\n", device_model);
+
+	// https://github.com/checkra1n/pongoOS/blob/09d82c8efcc28fc09e3391f48f41cb7b79a00808/src/drivers/gpio/gpio.c#L38
+	gpio_base = dt_get_u32_prop("gpio", "reg") + gIOBase;
+	printf("gpio_base: 0x%llx\n\n", gpio_base);
 
 	static uint8_t possible_addresses[0x400];
 
