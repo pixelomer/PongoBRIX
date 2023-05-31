@@ -88,6 +88,15 @@ const struct device_model devices[] = {
 		.home_button = 0x20f100158,
 		.home_button_at_right = 1
 	},
+	{
+		.name = "iPhone8,4",
+		.volume_up = 0x20f100108,
+		.volume_down = 0x20f10010c,
+		.mute_switch = 0x20f100254,
+		.power_button = 0x20f100184,
+		.home_button = 0x20f100180,
+		.home_button_at_right = 1
+	},
 	{ .name = NULL }
 };
 
