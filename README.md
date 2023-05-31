@@ -10,11 +10,7 @@ A pongoOS module for running the BRIX game, featuring rendering code I wrote at 
 
 **Warning:** This project was intended to be compiled on macOS. If you're using Linux, you will have to modify the makefile and you might need to use something other than `pongoterm`.
 
-1. Make sure you cloned pongoOS to `../pongoOS`.
-2. Apply the small patch in `pongo_changes.patch` to `../pongoOS`. This patch makes pongoOS export two additional symbols that are required by the CHIP-8 emulator. You can apply this patch by running `git apply pongo_changes.patch` in `../pongoOS` (replace `pongo_changes.patch` with the absolute path).
-3. Compile pongoOS itself by running `make` in `../pongoOS`.
-4. Compile `pongoterm` by running `make` in `../pongoOS/scripts`.
-5. Boot into pongoOS with `checkrain -k ../pongoOS/build/Pongo.bin -p` if your device isn't already in pongoOS.
+- Clone PongoOS to ../pongoOS like this: `git clone --recursive https://github.com/checkra1n/PongoOS.git ../pongoOS`
 
 ## Compatibility
 
@@ -30,7 +26,7 @@ If your device is already supported, great! You won't have to modify the code. Y
 
 Different devices use different addresses for buttons and there doesn't appear to be an automatic way to extract these addresses from the device. However, you can use `button_helper` in this repository to manually find the button addresses for your device.
 
-1. With your device plugged in, run `make load_buttons`. This will install the button helper module in pongoOS and show you the pongoOS shell.
+1. With your device plugged in, run `make start_pongoos_shell`. This will open a pongoOS shell, where you can then run `/send button_helper.bin` and then `modload`. If you don't have button_helper.bin, run `make button_helper.bin` and try again.
 2. In the pongoOS shell, run `button_helper`.
 3. Follow the instructions given by the program. "Holding the mute switch" means muting and releasing it means unmuting. Example output:
 ```
@@ -55,7 +51,7 @@ Address: 0x20f1000a0
 
 ## Running BRIX
 
-1. Run `make load_brix`. This will compile the module and load it in pongoOS.
+1. Run `make load_pongoos_shell`. This will load the pongo_os shell where you can then run `/send brix.bin` and then `modload`. If you don't have brix.bin, run `make brix.bin` and try again.
 2. Run `brix` in the pongoOS shell. Your device should now be running BRIX.
 
 ## Controls
