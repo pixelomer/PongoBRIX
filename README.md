@@ -19,6 +19,7 @@ Currently supported devices:
 - iPad Pro 10.5-inch WiFi/Cellular (iPad7,4)
 - iPad 10.2-inch 7th Gen WiFi/Cellular (iPad7,12)
 - iPhone SE (1st generation) (iPhone8,4)
+- iPad 7 (iPad7,11)
 
 If your device is already supported, great! You won't have to modify the code. You can skip to [running BRIX](#running-brix). If your device isn't supported, adding support for your own device shouldn't be hard.
 
