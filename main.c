@@ -80,6 +80,15 @@ const struct device_model devices[] = {
 		.home_button_at_right = 1
 	},
 	{
+	    .name = "iPod7,1",
+	    .volume_up = 0x20e3000b4,
+	    .volume_down = 0x20e3000b8,
+	    .mute_switch = NULL,
+	    .power_button = 0x20e300084,
+	    .home_button = 0x20e300080,
+	    .home_button_at_right = 1
+	},
+	{
 		.name = "iPod9,1",
 		.volume_up = 0x20f10005c,
 		.volume_down = 0x20f1002d0,
