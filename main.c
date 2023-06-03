@@ -80,6 +80,15 @@ const struct device_model devices[] = {
 		.home_button_at_right = 1
 	},
 	{
+		.name = "iPod7,1",
+		.volume_up = 0x20e3000b4,
+		.volume_down = 0x20e3000b8,
+		.mute_switch = NULL,
+		.power_button = 0x20e300084,
+		.home_button = 0x20e300080,
+		.home_button_at_right = 1
+	},
+	{
 		.name = "iPod9,1",
 		.volume_up = 0x20f10005c,
 		.volume_down = 0x20f1002d0,
@@ -147,7 +156,7 @@ void redraw_screen(chip8_t *self, chip8_event_t event) {
 
 void play_brix() {
 	srand((unsigned int)get_ticks());
-	
+
 	// find the device details
 	uint32_t len;
 	const char *device_model = (char *)dt_prop(gDeviceTree, "model", &len);
@@ -197,7 +206,7 @@ void play_brix() {
 
 			int64_t cycle_usec = ((int64_t)get_ticks() - cycle_start) / 24;
 			int64_t spin_duration = (int64_t)usec_per_instruction - cycle_usec;
-			
+
 			if (spin_duration > 0) {
 				spin((uint32_t)spin_duration);
 			}
