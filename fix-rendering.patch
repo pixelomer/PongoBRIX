@@ -1,0 +1,33 @@
+Fix rendering for the following devices:
+
+* iPod Touch (all models)
+* iPhone 5s (all models)
+* Any supported device with a 4.8 inch screen
+
+=================================================
+diff -urN a/main.c b/main.c
+--- a/main.c	2023-06-02 02:06:31.000000000 +0200
++++ b/main.c	2023-06-02 00:49:29.000000000 +0200
+@@ -137,17 +137,17 @@
+ void redraw_screen(chip8_t *self, chip8_event_t event) {
+ 	const uint32_t scale = game_scale;
+ 	const uint8_t flip = device->home_button_at_right;
+-	const uint32_t yOffset = (gHeight - (CHIP8_SCREEN_WIDTH * scale)) / 2;
+-	const uint32_t xOffset = (gWidth - (CHIP8_SCREEN_HEIGHT * scale)) / 2;
+-	for (uint32_t y=event.redraw_event.y; y<event.redraw_event.y + event.redraw_event.height; y++) {
+-		for (uint32_t x=event.redraw_event.x; x<event.redraw_event.x + event.redraw_event.width; x++) {
++	const uint32_t y_offset = (gHeight - (CHIP8_SCREEN_WIDTH * scale)) / 2;
++	const uint32_t x_offset = (gWidth - (CHIP8_SCREEN_HEIGHT * scale)) / 2;
++	for (uint32_t y = 0; y < CHIP8_SCREEN_HEIGHT; y++) {
++		for (uint32_t x = 0; x < CHIP8_SCREEN_WIDTH; x++) {
+ 			uint32_t rx = x % CHIP8_SCREEN_WIDTH;
+ 			uint32_t ry = y % CHIP8_SCREEN_HEIGHT;
+ 			uint32_t tx = (flip ? rx : (CHIP8_SCREEN_WIDTH - rx - 1));
+ 			uint32_t ty = (flip ? (CHIP8_SCREEN_HEIGHT - ry - 1) : ry);
+ 			for (uint32_t sx = ty * scale; sx < (ty + 1) * scale; sx++) {
+ 				for (uint32_t sy = tx * scale; sy < (tx + 1) * scale; sy++) {
+-					gFramebuffer[gRowPixels * (sy + yOffset) + (sx + xOffset)] = self->framebuffer[rx][ry] ? 0xFFFFFFFF : 0x0;
++					gFramebuffer[gRowPixels * (sy + y_offset) + (sx + x_offset)] = self->framebuffer[rx][ry] ? 0xFFFFFFFF : 0x0;
+ 				}
+ 			}
+ 		}
