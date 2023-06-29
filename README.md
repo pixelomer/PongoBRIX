@@ -19,10 +19,11 @@ A pongoOS module for running the BRIX game, featuring rendering code I wrote at 
 ## Compatibility
 
 Currently supported devices:
+
 - iPhone 7 GSM (iPhone9,3)
 - iPad Pro 10.5-inch WiFi/Cellular (iPad7,4)
 - iPad 10.2-inch 7th Gen WiFi/Cellular (iPad7,12)
-- iPod Touch 6th Gen (iPod7,1)
+- iPod Touch 6th Gen (iPod7,1) ([requires extra patching](#48-inch-devices))
 
 If your device is already supported, great! You won't have to modify the code. You can skip to [running BRIX](#running-brix). If your device isn't supported, adding support for your own device shouldn't be hard.
 
@@ -57,6 +58,14 @@ Address: 0x20f1000a0
 
 1. Run `make load_brix`. This will compile the module and load it in pongoOS.
 2. Run `brix` in the pongoOS shell. Your device should now be running BRIX.
+
+### 4.8-inch devices
+
+For devices with a 4.8-inch screen, a different method for rendering is required. Before building `brix`, make sure to apply the patch in `fix-rendering.patch`.
+
+```
+$ git apply -v fix-rendering.patch
+```
 
 ## Controls
 
